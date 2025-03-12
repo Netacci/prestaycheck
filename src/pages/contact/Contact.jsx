@@ -13,7 +13,7 @@ import {
 } from 'lucide-react';
 import Layout from '../../components/layout/Layout';
 
-const ContactMethod = ({ icon, title, content, link }) => (
+const ContactMethod = ({ icon, title, content, link, content2 }) => (
   <div className='flex items-start p-4 bg-white rounded-lg shadow-md'>
     {React.createElement(icon, {
       className: 'w-6 h-6 text-blue-600 mr-4 mt-1 flex-shrink-0',
@@ -25,7 +25,10 @@ const ContactMethod = ({ icon, title, content, link }) => (
           {content}
         </a>
       ) : (
-        <p className='text-gray-600'>{content}</p>
+        <>
+          <p className='text-gray-600 mb-2'>{content}</p>
+          {content2 && <p className='text-gray-600 mb-2'>{content2}</p>}
+        </>
       )}
     </div>
   </div>
@@ -50,19 +53,22 @@ const Contact = () => {
             <ContactMethod
               icon={Mail}
               title='Email'
-              content='info@example.com'
-              link='mailto:info@example.com'
+              content='hello@prestaycheck.ca'
+              link='mailto:hello@prestaycheck.ca'
             />
             <ContactMethod
               icon={Phone}
               title='Phone'
-              content='+1 (123) 456-7890'
-              link='tel:+11234567890'
+              content='+1 (289) 885-7870'
+              link='tel:+1289-885-78700'
             />
             <ContactMethod
               icon={MapPin}
               title='Address'
               content='123 Business Street, Suite 100, City, State 12345'
+              content2='22 June Callwood Way,
+Brantford, Ontario
+N3T 0T7'
             />
             <ContactMethod
               icon={Clock}
@@ -91,8 +97,8 @@ const Contact = () => {
             <ContactMethod
               icon={Globe}
               title='Website'
-              content='www.example.com'
-              link='https://www.example.com'
+              content='www.prestaycheck.ca'
+              link='https://prestaycheck.ca'
             />
           </div>
 
